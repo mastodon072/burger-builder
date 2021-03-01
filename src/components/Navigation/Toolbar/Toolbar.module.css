@@ -29,7 +29,4 @@
     .DesktopOnly {
         display: block;
     }
-    .Menu {
-        display: none;
-    }
 }

@@ -10,7 +10,7 @@ class Layout  extends Component {
   }
 
   handleSidebarToggle = () => {
-    this.setState({showSidebar: !this.state.showSidebar})
+    this.setState((prevState) => { return {showSidebar: !prevState.showSidebar}})
   }
 
   render() {
