@@ -3,12 +3,14 @@ import classses from './Toolbar.module.css'
 import Logo from '../../Logo/Logo'
 import NavigationItems from '../NavigationItems/NavigationItems'
 
-const toolbar = () => {
+const toolbar = (props) => {
   return(
       <header className={classses.Toolbar}>
-        <div>Menu</div>
-        <Logo/>
-        <nav>
+        <div onClick={props.toggleSidebar} className={classses.Menu}>Menu</div>
+        <div className={classses.Logo}>
+          <Logo height='80%'/>
+        </div>
+        <nav className={classses.DesktopOnly}>
           <NavigationItems/>
         </nav>
       </header>

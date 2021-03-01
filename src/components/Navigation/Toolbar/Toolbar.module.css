@@ -16,3 +16,20 @@
 .Toolbar nav {
     height: 100%;
 }
+
+.DesktopOnly {
+    display: none;
+}
+
+.Logo {
+    height: 80%;
+}
+
+@media (min-width: 501px) {
+    .DesktopOnly {
+        display: block;
+    }
+    .Menu {
+        display: none;
+    }
+}
