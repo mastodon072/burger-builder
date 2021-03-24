@@ -40,7 +40,7 @@ const input = (props) => {
     }
     
     return (
-        <div className={classes.Input}>
+        <div className={classes.Input} key={props.keyy}>
             <label className={classes.Label}>{props.label}</label>  
             {inputElement}
             {validationError}

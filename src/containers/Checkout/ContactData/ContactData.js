@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 import Button from '../../../components/UI/Button/Button'
 import Spinner from '../../../components/UI/Spinner/Spinner'
@@ -109,7 +110,7 @@ class ContactData extends Component {
         }
 
         const order = {
-          ingredients: this.props.ingredients,
+          ingredients: this.props.ings,
           price: (+this.props.price).toFixed(2), //You would want to calculate price in server in real app
           orderData: formData
         }
@@ -165,11 +166,8 @@ class ContactData extends Component {
         }
       }
 
-      this.setState({orderForm: updatedOrderForm, formIsValid: formIsValid}, ()=>{
-        console.log(this.state.orderForm);
-      });
+      this.setState({orderForm: updatedOrderForm, formIsValid: formIsValid});
 
-      // console.log(event.target.value, inputIdentifier);
     }
 
     render () {
@@ -184,7 +182,7 @@ class ContactData extends Component {
               <form onSubmit={this.orderHandler}>
                   {formElementsArray.map(formElement => (
                     <Input 
-                      key={formElement.id}
+                      keyy={formElement.id}
                       elementType={formElement.config.elementType} 
                       elementConfig={formElement.config.elementConfig}
                       value={formElement.value}
@@ -208,4 +206,11 @@ class ContactData extends Component {
     }
 }
 
-export default ContactData;
+const mapStateToProps = state => {
+  return {
+    ings: state.ingredients,
+    price: state.totalPrice
+  }
+}
+
+export default connect(mapStateToProps)(ContactData);
