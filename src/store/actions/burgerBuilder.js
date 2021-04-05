@@ -29,11 +29,11 @@ export const fetchIngredientsFailed = () => {
 }
 
 export const initIngredients = () => {
+    console.log('from initINgredients');
     return dispatch => {
         axios.get('/ingredients.json')
           .then(res => {
               dispatch(setIngredients(res.data))
-            // this.setState({ingredients: res.data});
           })
           .catch(err=> {
             dispatch(fetchIngredientsFailed())
