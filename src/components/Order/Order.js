@@ -13,7 +13,6 @@ const order = (props) => {
             }
         );
     }
-    console.log(ingredients);
 
     const ingredientOutput = ingredients.map(ig => {
         return (

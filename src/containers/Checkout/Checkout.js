@@ -13,7 +13,6 @@ class Checkout extends Component {
     }
     
     checkoutCancelled = () => {
-        console.log(this.props);
         this.props.history.goBack();
     }
 
