@@ -115,7 +115,8 @@ class ContactData extends Component {
         const order = {
           ingredients: this.props.ings,
           price: (+this.props.price).toFixed(2), //You would want to calculate price in server in real app
-          orderData: formData
+          orderData: formData, 
+          userId: this.props.userId
         }
 
         this.props.onOrderBurger(order, this.props.token);
